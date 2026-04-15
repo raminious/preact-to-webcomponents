@@ -28,11 +28,12 @@
   <body>
     <div id="log" class="demo-log">Awaiting submission…</div>
 
-    <!-- standalone usage: <contact-form> brings its own provider -->
-    <contact-form
+    <app-root
       authorization="demo-token"
       api_url="https://jsonplaceholder.typicode.com"
-    ></contact-form>
+    >
+      <contact-form />
+    </app-root>
 
     <script src="../dist/pastel-form.min.js"></script>
     <script>

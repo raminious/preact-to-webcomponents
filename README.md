@@ -65,8 +65,7 @@ src/
 ├── jsx.d.ts                         IntrinsicElements for our tags
 ├── components/
 │   ├── ContactForm.tsx              the form UI
-│   ├── AppContextProvider.tsx       creates a per-instance store
-│   └── StandaloneContactForm.tsx    ContactForm + its own provider
+│   └── AppContextProvider.tsx       creates a per-instance store
 ├── context/
 │   └── root.ts                      store factory + AppContext
 └── hooks/
@@ -91,11 +90,6 @@ src/
 - **Observed attributes.** Anything you want to react to from outside must
   be listed in the third argument to `register(...)`. Empty array = no
   attributes are observed.
-- **Preact context does not cross custom-element boundaries.** Each
-  registered element gets its own Preact tree. That is why
-  `StandaloneContactForm` wraps `ContactForm` with its own provider —
-  nesting `<contact-form>` inside `<app-root>` would *not* share state
-  between them.
 
 ## Scripts
 

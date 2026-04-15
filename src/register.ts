@@ -1,7 +1,7 @@
 import register from 'preact-custom-element'
 
-import { StandaloneContactForm } from './components/StandaloneContactForm'
 import { AppContextProvider } from './components/AppContextProvider'
+import { ContactForm } from './components/ContactForm'
 
 import './styles.core.scss'
 
@@ -9,9 +9,9 @@ import './styles.core.scss'
 // from styles.core.scss applies uniformly. Switch to shadow DOM if you
 // need style isolation — see the README for the trade-offs.
 register(
-  StandaloneContactForm,
+  ContactForm,
   'contact-form',
-  ['authorization', 'api_url'],
+  [],
   { shadow: false },
 )
 
@@ -19,5 +19,8 @@ register(
   AppContextProvider,
   'app-root',
   ['authorization', 'api_url'],
-  { shadow: false },
+  { 
+    shadow: true,
+    mode: 'closed',
+  },
 )
