@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "ignoreDeprecations": "6.0",
+    "module": "esnext",
+    "target": "ES2020",
+    "noImplicitAny": true,
+    "noEmit": true,
+    "strictNullChecks": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "rootDir": "src",
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact",
+    "baseUrl": "/",
+    "lib": [
+      "ES2020",
+      "dom"
+    ],
+    "paths": {
+     "react": ["preact/compat"],
+      "react-dom": ["preact/compat"],
+      "react/jsx-runtime": ["preact/jsx-runtime"]
+    }
+  },
+  "compileOnSave": true,
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "src/**/*.test.ts"
+  ]
+}

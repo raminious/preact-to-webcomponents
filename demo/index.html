@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pastel Form — demo</title>
+    <link rel="stylesheet" href="../dist/pastel-form.min.css" />
+    <style>
+      body {
+        margin: 0;
+        padding: 2rem 1rem;
+        background: #f3f4f6;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      .demo-log {
+        max-width: 440px;
+        margin: 0 auto 1rem;
+        padding: 0.75rem 1rem;
+        background: #111827;
+        color: #d1fae5;
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 0.85rem;
+        border-radius: 8px;
+        min-height: 1.25rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="log" class="demo-log">Awaiting submission…</div>
+
+    <!-- standalone usage: <contact-form> brings its own provider -->
+    <contact-form
+      authorization="demo-token"
+      api_url="https://jsonplaceholder.typicode.com"
+    ></contact-form>
+
+    <script src="../dist/pastel-form.min.js"></script>
+    <script>
+      const log = document.getElementById('log')
+      window.addEventListener('pastel-form:contact-form:success', (e) => {
+        log.textContent = 'success → ' + JSON.stringify(e.detail.data)
+      })
+      window.addEventListener('pastel-form:contact-form:error', (e) => {
+        log.textContent = 'error → ' + (e.detail.error?.message ?? e.detail.error)
+      })
+    </script>
+  </body>
+</html>
